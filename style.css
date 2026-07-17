@@ -80,3 +80,165 @@ footer {
     width: 86%;
   }
 }
+.journey-introduction {
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+
+/* Main landscape area */
+.journey-route {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 70px 24px 42px;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      to bottom,
+      #cfe8f3 0%,
+      #e8f3e4 42%,
+      #d8c9a7 100%
+    );
+  box-shadow: inset 0 0 0 1px rgba(58, 78, 62, 0.12);
+}
+
+/* Distant mountain layer */
+.journey-route::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 54px;
+  height: 150px;
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 18%,
+      #8fa987 18% 34%,
+      transparent 34% 44%,
+      #6f8b72 44% 62%,
+      transparent 62% 70%,
+      #9db39a 70% 86%,
+      transparent 86%
+    );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Forest silhouette */
+.journey-route::after {
+  content: "▲ ▲  ▲ ▲ ▲   ▲ ▲  ▲ ▲ ▲   ▲ ▲";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 18px;
+  overflow: hidden;
+  color: #385f45;
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+  white-space: nowrap;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Individual location cards */
+.journey-stop {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  min-width: 185px;
+  min-height: 155px;
+  padding: 20px 18px;
+  border: 1px solid rgba(70, 83, 68, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 250, 241, 0.9);
+  backdrop-filter: blur(4px);
+  color: #283b2e;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(42, 58, 46, 0.12);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.journey-stop:hover {
+  transform: translateY(-6px);
+  background: #fffdf8;
+  box-shadow: 0 12px 24px rgba(42, 58, 46, 0.18);
+}
+
+.journey-icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.journey-stop strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+  color: #23452f;
+}
+
+.journey-description {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* Arrows between stops */
+.journey-arrow {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #7d5d38;
+}
+
+/* Different card accents */
+.journey-stop:nth-of-type(1),
+.journey-stop:nth-of-type(3),
+.journey-stop:nth-of-type(9) {
+  border-top: 5px solid #b08a55;
+}
+
+.journey-stop:nth-of-type(2) {
+  border-top: 5px solid #527a50;
+}
+
+.journey-stop:nth-of-type(4),
+.journey-stop:nth-of-type(5) {
+  border-top: 5px solid #9b744b;
+}
+
+.journey-stop:nth-of-type(6) {
+  border-top: 5px solid #a34f4f;
+}
+
+.journey-stop:nth-of-type(7) {
+  border-top: 5px solid #4d7892;
+}
+
+.journey-stop:nth-of-type(8) {
+  border-top: 5px solid #6f8f58;
+}
+
+/* Better mobile layout */
+@media (max-width: 700px) {
+  .journey-route {
+    padding: 58px 16px 34px;
+  }
+
+  .journey-stop {
+    min-width: 165px;
+  }
+
+  .journey-route::after {
+    font-size: 1.5rem;
+  }
+}
